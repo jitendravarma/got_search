@@ -19,7 +19,7 @@ class DashboardHeader extends React.Component {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">Career Ninja<span
+                                <a className="nav-link" href="/">GOT<span
                                     className="sr-only">(current)</span></a>
                             </li>
                         </ul>

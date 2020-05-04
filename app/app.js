@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var countRouter = require('./routes/count');
 var searchRouter = require('./routes/search');
 var autosuggestRouter = require('./routes/suggest');
+var mainSearchRouter = require('./routes/mainSearch');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use('/list', listRouter);
 app.use('/count', countRouter);
 app.use('/search', searchRouter);
 app.use('/suggest', autosuggestRouter);
+app.use('/main-search', mainSearchRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

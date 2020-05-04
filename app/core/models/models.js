@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
+var textSearch = require('mongoose-text-search');
 
 const userSchema = new Schema({
     name: String,
@@ -29,6 +30,12 @@ const userSchema = new Schema({
     region: String,
     note: String,
 })
+
+userSchema.plugin(textSearch);
+userSchema.index([
+    { attacker_king: 'text' }, { location: 'text' },
+    { defender_king: 'text' }, { region: 'text' }]
+);
 
 const User = mongoose.model('Users', userSchema);
 
