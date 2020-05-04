@@ -26,6 +26,7 @@ async function getConnection() {
 }
 
 async function readCSV() {
+	console.log("Starting ingestion!")
 	fs.createReadStream(filePath)
 		.pipe(csv())
 		.on('data', (data) => {
@@ -37,9 +38,11 @@ async function readCSV() {
 			}
 		}
 		).on('end', () => {
-			User.insertMany(results)
-			console.log("Ingested " + count + " in mongoDB");
-			process.exit()
+			console.log("Ingesting final batch!")
+			User.insertMany(results).then(() => {
+				console.log("Ingested " + count + " doc in mongoDB");
+				process.exit()
+			}).catch(error => console.log(error))
 		});
 }
 

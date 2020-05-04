@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
-
 var Schema = mongoose.Schema;
 
 const userSchema = new Schema({
