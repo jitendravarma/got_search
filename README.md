@@ -10,6 +10,7 @@ This repo is a demo MERN stack app, it demonstrates the basic implementation of 
     1. sudo apt install -y mongodb
 1. You might need to install node js
     1. sudo apt install nodejs
+    1. sudo apt install npm
 1. Install node modules
     1. cd in main dir
     1. npm install
